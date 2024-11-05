@@ -10,8 +10,8 @@ COPY script/init_mariadb.sh /usr/local/bin/init_mariadb.sh
 RUN chmod -x /usr/local/bin/init_mariadb.sh && \
 	mkdir -p /var/run/mysqld && \
 	chown -R mysql:mysql /var/run/mysqld && \
-	chdmod 777 /var/run/mysqld && \
-	chwon -R mysql:mysql /tmp /run/mysqld
+	chmod 777 /var/run/mysqld && \
+	chown -R mysql:mysql /tmp /run/mysqld
 
 EXPOSE 3306
 
