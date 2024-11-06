@@ -79,5 +79,6 @@ check_access:
 		echo "Acceso rederigido OK"; \
 	else \
 		echo "Acceso rederigido KO"; \
+	fi
 
-	.PHONY: all stop clean fclean re reset make_bash check_access exec_maria_client addhost hardclean hardreset
+.PHONY: all stop clean fclean re reset make_bash check_access exec_maria_client addhost hardclean hardreset

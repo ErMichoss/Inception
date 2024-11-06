@@ -6,7 +6,7 @@ networks:
 services:
  mariadb:
   container_name: mariadb
-#  image: mariadb
+  image: mariadb
   networks:
    - inception
   build: ./requirements/mariadb

@@ -1,6 +1,7 @@
 FROM debian:bullseye
 
-RUN apt update && apt install -y curl php7.4 php7.4-fpm php7.4-mysqli mariadb-client
+RUN apt update && apt install -y curl python3 python3-pip \
+	php7.4 php7.4-fpm php7.4-mysqli mariadb-client
 
 COPY config/wp_www.conf /etc/php/7.4/fpm/pool.d/
 
@@ -11,10 +12,10 @@ RUN chmod +x wp-cli.phar \
 	&& mkdir -p /run/php \
 	&& chmod  755 /run/php
 
-COPY --chmod=755 script/init_wp.sh /usr/local/bin/init_wp.sh
+COPY --chmod=755 script/init_wp.py /usr/local/bin/init_wp.py
 
 WORKDIR /var/www/html
 
 EXPOSE 9000
 
-ENTRYPOINT ["/bin/bash", "/usr/local/bin/init_wp.sh"]
+ENTRYPOINT ["python3", "/usr/local/bin/init_wp.py"]
