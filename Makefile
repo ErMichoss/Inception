@@ -60,7 +60,7 @@ hardreset: hardclean
 re: clean all
 
 make_bash:
-	docker exec -it "$$CONTAINER_NAME" /bin/bash
+	docker exec -it "$$(CONTAINER_NAME)" /bin/bash
 
 check_access:
 	@if curl -I -k https://nicgonza.42.fr:443; then \

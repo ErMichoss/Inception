@@ -1,6 +1,8 @@
 FROM debian:bullseye
 
-RUN apt update && apt install -y curl python3 python3-pip \
+RUN apt-get update && apt-get upgrade -y
+
+RUN apt-get install -y curl python3 python3-pip \
 	php7.4 php7.4-fpm php7.4-mysqli mariadb-client
 
 COPY config/wp_www.conf /etc/php/7.4/fpm/pool.d/
