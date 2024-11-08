@@ -30,6 +30,7 @@ def setup_wordpress():
             f"--admin_password={os.getenv('WP_ADMIN_PWD')} "
             f"--admin_email={os.getenv('WP_ADMIN_EMAIL')} "
             f"--skip-email --allow-root",
+            "Error al instalar WP"
         )
 
         run_command(
