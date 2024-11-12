@@ -32,6 +32,7 @@ services:
   restart: always
   expose:
    - "9000"
+   - "3306"
 
  nginx:
   container_name: nginx
@@ -44,8 +45,10 @@ services:
   volumes:
    - wordpress_data:/var/www/html
   restart: always
+  expose:
+   - "9000"
   ports:
-   - "433:433"
+   - "443:443"
 
 volumes:
  mariadb_data:
